@@ -1,0 +1,21 @@
+---
+- name: MongoDB playbook
+  hosts: amco
+  become: true
+  become_method: sudo
+  tasks:
+    
+    - name: Install MongoDB key
+      apt_key:
+        url: https://www.mongodb.org/static/pgp/server-4.2.asc
+        state: present
+    
+    - name: Install PyMySQL
+      apt_repository:
+        repo: deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse
+        state: present
+    
+    - name: Install MongoDB package
+      apt:
+          name: mongodb-org
+          update_cache: yes

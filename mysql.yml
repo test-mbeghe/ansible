@@ -1,6 +1,6 @@
 ---
 - name: MariaDB playbook
-  hosts: localhost
+  hosts: amco
   become: true
   become_method: sudo
   tasks:
