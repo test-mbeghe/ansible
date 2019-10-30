@@ -1,6 +1,6 @@
 ---
 - name: MariaDB playbook
-  hosts: localcomputers
+  hosts: localhost
   become: true
   become_method: sudo
   tasks:
